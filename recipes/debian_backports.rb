@@ -4,8 +4,9 @@
 #
 
 # backports for initial support
-backports_uri = if node["lsb"]["codename"] == "wheezy"
-                  "http://cdn.debian.net/debian"
+backports_uri = if node["lsb"]["codename"] == "wheezy" ||
+                   node["lsb"]["codename"] == "jessie"
+                    "http://cdn.debian.net/debian"
                 else
                   "http://backports.debian.org/debian-backports"
                 end
